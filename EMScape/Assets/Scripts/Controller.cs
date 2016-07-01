@@ -14,15 +14,15 @@ public class Controller : MonoBehaviour {
 	void Update () {
 		if (Input.GetKey (KeyCode.DownArrow)) {
 			this.transform.Translate (new Vector3 (0.0f, 0.0f, -1*velocityUpDown));
-		} else if (Input.GetKey (KeyCode.UpArrow)) {
-			this.transform.Translate (new Vector3 (0.0f, 0.0f, 1*velocityUpDown));
-		} else if (Input.GetKey (KeyCode.RightArrow)) {
-			this.transform.Translate (new Vector3 (1*velocityLeftRight, 0.0f, 0.0f));
-		} else if (Input.GetKey (KeyCode.LeftArrow)) {
-			this.transform.Translate (new Vector3 (-1*velocityLeftRight, 0.0f, 0.0f));
 		}
-		else{
-			this.transform.Translate(new Vector3 (0,0,0));
+		if (Input.GetKey (KeyCode.UpArrow)) {
+			this.transform.Translate (new Vector3 (0.0f, 0.0f, 1*velocityUpDown));
+		}
+		if (Input.GetKey (KeyCode.RightArrow)) {
+			this.transform.Translate (new Vector3 (1*velocityLeftRight, 0.0f, 0.0f));
+		}
+		if (Input.GetKey (KeyCode.LeftArrow)) {
+			this.transform.Translate (new Vector3 (-1*velocityLeftRight, 0.0f, 0.0f));
 		}
 	}
 }
