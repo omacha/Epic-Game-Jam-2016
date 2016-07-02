@@ -1,5 +1,6 @@
-# Epic Game Jam 2016 - 3rd edition
+# EMScape
+## Epic Game Jam 2016 - 3rd edition
 
-This is our contribution to the Epic Game Jam 2016.
+Tired of being lonely in a retirement home? Just bust out! With EMScape, you can train to finally achieve your goal of freedom!
 
-- Team OKUNiD
+![OKUNiD Logo](/resources/graphics/1-CORPORATE_DESIGN/logo_okunid.png?raw=true =400x)
