@@ -1,4 +1,9 @@
 sceneSetups:
+<<<<<<< HEAD
 - path: Assets/Levels/Inventory.unity
+=======
+- path: C:/Users/Simon/Documents/Projets/Mirko Stanchieri/NoScoreHardcore_debug 9
+    - copie/Assets/Levels/credits.unity
+>>>>>>> simon
   isLoaded: 1
   isActive: 1
