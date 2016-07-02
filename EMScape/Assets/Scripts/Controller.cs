@@ -28,8 +28,8 @@ public class Controller : MonoBehaviour {
 			terrainXMin = terrainPosition.x + borderPadding;
 			terrainXMax = terrainPosition.x + terrainSize.x - borderPadding;
 
-			terrainZMin = -terrainSize.z / 2 + borderPadding;
-			terrainZMax = terrainSize.z / 2 - borderPadding;
+		terrainZMin = terrainPosition.z + borderPadding;
+		terrainZMax = terrainPosition.z + terrainSize.z - borderPadding;
 
 		}
 	}
