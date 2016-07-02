@@ -30,10 +30,12 @@ public class Selector : MonoBehaviour {
 		}
 
 		//Set default selected objects 
+		/*
 		database.itemList [defaultW].itemEquiped = true;
 		database.itemList [defaultQ].itemEquiped = true;
 		database.itemList [defaultC].itemEquiped = true;
 		database.itemList [defaultA].itemEquiped = true;
+		*/
 
 		GameObject weapons = this.transform.GetChild (1).gameObject;
 		GameObject conso = this.transform.GetChild (2).gameObject;
@@ -60,7 +62,9 @@ public class Selector : MonoBehaviour {
 		}
 		
 	}
-
+	void Update(){
+		UpdateCanvas (we.ToArray (), co.ToArray (), ac.ToArray (), qu.ToArray ());
+	}
 
 	void UpdateImage (GameObject g){
 		Image image = g.GetComponent<Image> ();

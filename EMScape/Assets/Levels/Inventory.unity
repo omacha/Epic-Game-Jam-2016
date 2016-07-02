@@ -2227,7 +2227,7 @@ MonoBehaviour:
     itemPower: 12
     itemIcon: {fileID: 2800000, guid: fa4b00478f7fa7941a2d6470ac6145fd, type: 3}
     itemType: 0
-    itemAquired: 1
+    itemAquired: 0
     itemEquiped: 0
   - itemName: Syringe
     itemID: 1
@@ -2235,7 +2235,7 @@ MonoBehaviour:
     itemPower: 0
     itemIcon: {fileID: 2800000, guid: 45a433ce12b51f34c8f160baaca875e5, type: 3}
     itemType: 1
-    itemAquired: 1
+    itemAquired: 0
     itemEquiped: 0
   - itemName: Crutches
     itemID: 2
@@ -2243,7 +2243,7 @@ MonoBehaviour:
     itemPower: 0
     itemIcon: {fileID: 2800000, guid: a6bb3fd59e7eca7409f4b6b095fb0934, type: 3}
     itemType: 3
-    itemAquired: 1
+    itemAquired: 0
     itemEquiped: 0
   - itemName: Rolator
     itemID: 3
@@ -2251,7 +2251,15 @@ MonoBehaviour:
     itemPower: 0
     itemIcon: {fileID: 2800000, guid: ff3ec2d874f7d404ab7a40640f8ed42b, type: 3}
     itemType: 3
-    itemAquired: 1
+    itemAquired: 0
+    itemEquiped: 0
+  - itemName: 
+    itemID: 0
+    itemDesc: 
+    itemPower: 0
+    itemIcon: {fileID: 0}
+    itemType: 0
+    itemAquired: 0
     itemEquiped: 0
   - itemName: 
     itemID: 0
@@ -2275,14 +2283,6 @@ MonoBehaviour:
     itemPower: 0
     itemIcon: {fileID: 0}
     itemType: 0
-    itemAquired: 1
-    itemEquiped: 0
-  - itemName: 
-    itemID: 0
-    itemDesc: 
-    itemPower: 0
-    itemIcon: {fileID: 0}
-    itemType: 0
     itemAquired: 0
     itemEquiped: 0
   - itemName: 
@@ -2291,7 +2291,7 @@ MonoBehaviour:
     itemPower: 0
     itemIcon: {fileID: 0}
     itemType: 0
-    itemAquired: 1
+    itemAquired: 0
     itemEquiped: 0
   - itemName: 
     itemID: 0
