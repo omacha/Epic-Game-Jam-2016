@@ -29,12 +29,6 @@ public class Item	 {
 		this.itemID = _id;
 		this.itemDesc = _desc;
 		this.itemPower = _power;
-		/*Texture tex = Resources.Load ("Assets/Sprites/Items/test.png", typeof(Texture)) as Texture;
-		if (tex == null) {
-			Debug.LogError ("Error on loading texture");
-		} else {
-			this.itemIcon = tex;
-		}*/
 		this.itemType = _type;
 		this.itemAquired = false;
 	}
@@ -44,4 +38,8 @@ public class Item	 {
 		this.itemAquired = false;
 	}
 
+	public override string ToString(){
+		string s = itemName + " " + itemID + " Acquired = " + itemAquired + " Equiped = " + itemEquiped;
+		return s;
+	}
 }
