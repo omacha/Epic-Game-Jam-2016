@@ -2,10 +2,10 @@
 using System.Collections;
 
 public class Weapon : MonoBehaviour {
-	public bool isMelee = true;
 	public float damage = 3.0f;
 	public float fireRate = 1.0f;
 
+	public GameObject firePoint;
 	public Collider attackTrigger;
 
 	private float timeToFire = 0.0f;
@@ -26,12 +26,8 @@ public class Weapon : MonoBehaviour {
 	}
 
 	public void Attack () {
-		if (isMelee) {
-			attackTrigger.GetComponent<AttackTrigger>().setDamage (damage);
-			attackTrigger.enabled = true;
-			// animator call animation
-		} else {
-
-		}
+		attackTrigger.GetComponent<AttackTrigger>().setDamage (damage);
+		attackTrigger.enabled = true;
+		// animator call animation
 	}
 }
