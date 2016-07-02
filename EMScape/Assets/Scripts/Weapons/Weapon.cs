@@ -2,8 +2,8 @@
 using System.Collections;
 
 public class Weapon : MonoBehaviour {
-
-	public float damage = 3;
+	public bool isMelee = true;
+	public float damage = 3.0f;
 	public float fireRate = 1.0f;
 
 	public Collider attackTrigger;
@@ -17,14 +17,21 @@ public class Weapon : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if (Input.GetKey(KeyCode.Mouse0) && Time.time > timeToFire) {
+		if (Input.GetKey (KeyCode.Mouse0) && Time.time > timeToFire) {
 			timeToFire = Time.time + 1 / fireRate;
-			Shoot ();
+			Attack ();
+		} else {
+			attackTrigger.enabled = false;
 		}
 	}
 
-	public void Shoot () {
-		attackTrigger.enabled = true;
-		// animator call animation
+	public void Attack () {
+		if (isMelee) {
+			attackTrigger.GetComponent<AttackTrigger>().setDamage (damage);
+			attackTrigger.enabled = true;
+			// animator call animation
+		} else {
+
+		}
 	}
 }
