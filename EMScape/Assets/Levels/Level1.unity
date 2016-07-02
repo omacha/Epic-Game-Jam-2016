@@ -141,10 +141,10 @@ Camera:
     y: 0
     width: 1
     height: 1
-  near clip plane: 1
-  far clip plane: 200
-  field of view: 60
-  orthographic: 1
+  near clip plane: 0.1
+  far clip plane: 50
+  field of view: 45
+  orthographic: 0
   orthographic size: 10
   m_Depth: -1
   m_CullingMask:
@@ -165,10 +165,10 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 162906674}
-  m_LocalRotation: {x: 0.11320323, y: 0, z: 0, w: 0.9935719}
-  m_LocalPosition: {x: 10, y: 30, z: -100}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 10, z: -40}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_LocalEulerAnglesHint: {x: 13, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -183,7 +183,7 @@ GameObject:
   - 218: {fileID: 795469420}
   - 154: {fileID: 795469419}
   m_Layer: 0
-  m_Name: Floor1
+  m_Name: Floor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -237,7 +237,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 795469418}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -5, y: 0, z: -5}
   m_LocalScale: {x: 1, y: 0, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
@@ -317,6 +317,7 @@ GameObject:
   - 65: {fileID: 1969916549}
   - 23: {fileID: 1969916548}
   - 114: {fileID: 1969916552}
+  - 114: {fileID: 1969916553}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -360,7 +361,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
+  m_Size: {x: 1, y: 2, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!33 &1969916550
 MeshFilter:
@@ -393,5 +394,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 22efa8322da39c741b372fc2403403fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  velocityUpDown: 0.5
-  velocityLeftRight: 0.1
+  velocityUpDown: 10
+  velocityLeftRight: 10
+  borderPadding: 1
+  floor: {fileID: 795469418}
+--- !u!114 &1969916553
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1969916547}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4eab82f60d61e0f46aba2bbbbdbfc270, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  floor: {fileID: 795469418}
+  movementBuffer: 10
+  borderBuffer: 2
