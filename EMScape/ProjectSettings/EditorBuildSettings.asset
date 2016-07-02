@@ -6,6 +6,6 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Levels/Couloir.unity
+    path: Assets/Levels/CouloirBackup.unity
   - enabled: 1
-    path: Assets/Levels/LevelPorte1.unity
+    path: Assets/Levels/Salle1.unity
