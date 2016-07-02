@@ -38,4 +38,8 @@ public class Item	 {
 		this.itemAquired = false;
 	}
 
+	public override string ToString(){
+		string s = itemName + " " + itemID + " Acquired = " + itemAquired + " Equiped = " + itemEquiped;
+		return s;
+	}
 }
