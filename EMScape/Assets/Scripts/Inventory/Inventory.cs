@@ -9,9 +9,6 @@ public class Inventory : MonoBehaviour {
 	public List<Item> slots = new List<Item> ();
 	private ItemDatabase database;
 	private bool showInventory = false;
-	private int cellSize = 160;
-	private int cellSpan = 20;
-	private int blocksSpan = 100;
 	private GameObject overlay;
 	private List<GameObject> glowList = new List<GameObject>();
 	private int currentWeapon;
@@ -30,8 +27,8 @@ public class Inventory : MonoBehaviour {
 			Debug.LogError ("DatabaseNULL");
 		}
 		inventory [0] = database.itemList [0];
-		inventory [6] = database.itemList [2];
-		inventory [10] = database.itemList [1];
+		inventory [6] = database.itemList [1];
+		inventory [10] = database.itemList [2];
 		inventory [11] = database.itemList [3];
 
 		inventory [0].itemAquired = true;
@@ -41,15 +38,14 @@ public class Inventory : MonoBehaviour {
 
 		overlay = GameObject.Find ("InventoryOverlay");
 		for (int i = 0; i < (slotsX * slotsY); i++) {
-			glowList.Add(GameObject.Find ("selected-spot (" + i.ToString() + ")"));
-			print("selected-spot (" + i.ToString() + ")");
+			glowList.Add(GameObject.Find ("selected-spot (" + i.ToString () + ")"));
 			glowList [i].SetActive (false);
 		}
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		if (Input.GetButtonDown ("inventory")) {
+		if (Input.GetButtonDown("Inventory")){
 			showInventory = !showInventory;
 		}
 
@@ -81,6 +77,7 @@ public class Inventory : MonoBehaviour {
 					if (cellRect.Contains (Event.current.mousePosition)){
 						GUI.Box (new Rect (Event.current.mousePosition.x+100, Event.current.mousePosition.y+100, 200, 100),showTooltip(slots[i]));
 						if (Event.current.button == 0 && Event.current.type == EventType.mouseDown) {
+							print ("banane");
 							if (i == 0 || i== 1 || i==4 || i==5) {
 								slots [currentWeapon].itemEquiped = false;
 								glowList [currentWeapon].SetActive (false);
