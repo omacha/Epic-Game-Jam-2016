@@ -16,20 +16,22 @@ public class Controller : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		terrain = (Terrain)floor.GetComponent ("Terrain");
+		if (floor != null) {
+			terrain = (Terrain)floor.GetComponent ("Terrain");
+		}
 		if (terrain == null) {
 			Debug.Log ("Floor has no \"Terrain\" Component.");
+		}else{
+			Vector3 terrainPosition = terrain.transform.position;
+			Vector3 terrainSize = terrain.terrainData.size;
+
+			terrainXMin = terrainPosition.x + borderPadding;
+			terrainXMax = terrainPosition.x + terrainSize.x - borderPadding;
+
+			terrainZMin = -terrainSize.z / 2 + borderPadding;
+			terrainZMax = terrainSize.z / 2 - borderPadding;
+
 		}
-
-		Vector3 terrainPosition = terrain.transform.position;
-		Vector3 terrainSize = terrain.terrainData.size;
-
-		terrainXMin = terrainPosition.x + borderPadding;
-		terrainXMax = terrainPosition.x + terrainSize.x - borderPadding;
-
-		terrainZMin = -terrainSize.z / 2 + borderPadding;
-		terrainZMax =  terrainSize.z / 2 - borderPadding;
-
 	}
 	
 	// Update is called once per frame
