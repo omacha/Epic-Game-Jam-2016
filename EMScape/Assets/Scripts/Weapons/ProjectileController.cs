@@ -28,6 +28,7 @@ public class ProjectileController : MonoBehaviour {
 
 		if (Time.time - startTime > maxTime) {
 			Destroy (gameObject);
+			Debug.Log ("Destroyed overaged projectile");
 		}
 	}
 
@@ -35,9 +36,10 @@ public class ProjectileController : MonoBehaviour {
 		this.damage = damage;
 	}
 
-	void OnTriggerEnter(Collider other) {
-		if (other.CompareTag ("Enemy")) {
-			other.GetComponent<Health> ().Damage (damage);
+	void OnCollisionEnter(Collision other) {
+		if (other.gameObject.CompareTag ("Enemy") && other.gameObject.GetComponent<Health> () != null) {
+			other.gameObject.GetComponent<Health> ().Damage (damage);
+			Debug.Log (other.gameObject.name + " has taken " + damage + " damage.");
 			Destroy (gameObject);
 		}
 	}

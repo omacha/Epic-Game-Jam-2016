@@ -34,7 +34,7 @@ public class RangedWeapon : MonoBehaviour {
 			gameObject.transform.position = pos;
 		}
 
-		prefab.GetComponent<ProjectileController> ().SetDamage (damage);
-		Instantiate (prefab, firePoint.transform.position, firePoint.transform.rotation);
+		GameObject obj = (GameObject)Instantiate (prefab, firePoint.transform.position, firePoint.transform.rotation);
+		obj.GetComponent<ProjectileController> ().SetDamage (damage);
 	}
 }
