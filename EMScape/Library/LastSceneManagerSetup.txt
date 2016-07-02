@@ -1,8 +1,4 @@
 sceneSetups:
-<<<<<<< HEAD
-- path: Assets/Levels/CouloirBackup.unity
-=======
 - path: Assets/Levels/Inventory.unity
->>>>>>> fc4dbcb574d7202481179845c9a5337955043375
   isLoaded: 1
   isActive: 1
