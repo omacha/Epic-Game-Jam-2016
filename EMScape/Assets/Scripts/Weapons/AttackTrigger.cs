@@ -4,15 +4,15 @@ using System.Collections;
 public class AttackTrigger : MonoBehaviour {
 
 	private float dmg = 2;
-	private AudioClip hitSound;
+	private AudioClip hitSound = null;
 
 	void OnTriggerEnter(Collider col) {
 		if (!col.isTrigger && col.CompareTag("Enemy") && col.GetComponent<Health>() != null) {
 			col.SendMessageUpwards ("Damage", dmg);
 			if (hitSound != null) {
-				AudioSource.PlayClipAtPoint (hitSound, Vector3.zero);
+				AudioSource.PlayClipAtPoint (hitSound, transform.position);
 			}
-			this.enabled = false;
+			GetComponent<BoxCollider> ().enabled = false;
 			Debug.Log (col.gameObject.name + " has received " + dmg + " damage!");
 		}
 	}

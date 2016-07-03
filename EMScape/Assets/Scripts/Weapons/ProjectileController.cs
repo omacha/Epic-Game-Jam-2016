@@ -5,10 +5,10 @@ public class ProjectileController : MonoBehaviour {
 	public float maxTime = 10.0f;
 	public float speed = 20.0f;
 
-	private float damage;
+	private float damage = 1.0f;
 	private GameObject player;
-	private float startTime;
-	private AudioClip hitSound;
+	private float startTime = 0.0f;
+	private AudioClip hitSound = null;
 
 	// Use this for initialization
 	void Start () {
@@ -47,8 +47,7 @@ public class ProjectileController : MonoBehaviour {
 			Debug.Log (other.gameObject.name + " has taken " + damage + " damage.");
 
 			if (hitSound != null) {
-				// play audio
-				AudioSource.PlayClipAtPoint(hitSound, Vector3.zero);
+				AudioSource.PlayClipAtPoint(hitSound, transform.position);
 			}
 			Destroy (gameObject);
 		}

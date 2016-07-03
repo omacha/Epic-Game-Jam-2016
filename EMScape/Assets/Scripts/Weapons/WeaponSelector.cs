@@ -12,7 +12,7 @@ public class WeaponSelector : MonoBehaviour {
 			Debug.LogError ("Object has no component ItemDatabase");
 		}
 
-		GetComponent<Weapon> ().enabled = false;
+		GetComponent<Weapon> ().Disable ();
 		GetComponent<RangedWeapon> ().enabled = false;
 	}
 	
@@ -26,14 +26,14 @@ public class WeaponSelector : MonoBehaviour {
 		}
 
 		if (e != current) {
-			GetComponent<Weapon> ().enabled = false;
+			GetComponent<Weapon> ().Disable ();
 			GetComponent<RangedWeapon> ().enabled = false;
 
 			current = e;
 
 			if (e.itemName == "Frying pan") {
 				Debug.Log ("Frying pan selected as weapon");
-				GetComponent<Weapon> ().enabled = true;
+				GetComponent<Weapon> ().Enable ();
 			} else if (e.itemName == "Syringe") {
 				Debug.Log ("Syringe selected as weapon");
 				GetComponent<RangedWeapon> ().enabled = true;

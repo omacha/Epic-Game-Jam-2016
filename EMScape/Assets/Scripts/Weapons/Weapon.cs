@@ -26,6 +26,16 @@ public class Weapon : MonoBehaviour {
 		}
 	}
 
+	public void Disable () {
+		this.enabled = false;
+		GameObject.FindObjectOfType<AttackTrigger> ().GetComponent<BoxCollider> ().enabled = false;
+	}
+
+	public void Enable () {
+		this.enabled = true;
+		GameObject.FindObjectOfType<AttackTrigger> ().GetComponent<BoxCollider> ().enabled = true;
+	}
+
 	public void Attack () {
 		attackTrigger.GetComponent<AttackTrigger>().SetDamage (damage);
 		if (hitSounds.Length > 0) {

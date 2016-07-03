@@ -29,15 +29,15 @@ public class RangedWeapon : MonoBehaviour {
 		GameObject obj = (GameObject)Instantiate (prefab, firePoint.transform.position, firePoint.transform.rotation);
 		obj.GetComponent<ProjectileController> ().SetDamage (damage);
 
-		Vector3 curScale = obj.transform.localScale;
-		Vector3 playerScale = GameObject.FindGameObjectWithTag("Player").transform.localScale;
-		curScale.x = Mathf.Sign (playerScale.x) * Mathf.Abs (curScale.x);
-		obj.transform.localScale = curScale;
-
 		if (hitSounds.Length > 0) {
 			int index = (int)Mathf.Floor (Random.value * hitSounds.Length);
 			AudioClip hitSound = hitSounds [index];
 			obj.GetComponent<ProjectileController> ().SetHitSound (hitSound);
 		}
+
+		Vector3 curScale = obj.transform.localScale;
+		Vector3 playerScale = GameObject.FindGameObjectWithTag("Player").transform.localScale;
+		curScale.x = Mathf.Sign (playerScale.x) * Mathf.Abs (curScale.x);
+		obj.transform.localScale = curScale;
 	}
 }
