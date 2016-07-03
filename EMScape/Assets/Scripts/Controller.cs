@@ -77,11 +77,14 @@ public class Controller : MonoBehaviour {
 
 		this.transform.position = playerPos;
 
-		if (stepSounds.Length > 0 && sideTranslation * sideTranslation + depthTranslation * depthTranslation > 0.0f) {
-			if (Time.time > timeToStep) {
+		if (sideTranslation * sideTranslation + depthTranslation * depthTranslation > 0.0f) {
+			GetComponent<Animator> ().SetBool ("Walking", true);
+			if (stepSounds.Length > 0 && Time.time > timeToStep) {
 				timeToStep = Time.time + 1 / stepRate;
-				AudioSource.PlayClipAtPoint (stepSounds[curFootStep++ % stepSounds.Length], transform.position);
+				AudioSource.PlayClipAtPoint (stepSounds [curFootStep++ % stepSounds.Length], transform.position);
 			}
+		} else {
+			GetComponent<Animator> ().SetBool ("Walking", false);
 		}
 	}
 }
