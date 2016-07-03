@@ -729,7 +729,7 @@ AudioSource:
   m_Volume: 0.5
   m_Pitch: 1
   Loop: 1
-  Mute: 0
+  Mute: 1
   Spatialize: 0
   Priority: 128
   DopplerLevel: 1
@@ -1140,6 +1140,10 @@ Prefab:
       propertyPath: hitSounds.Array.size
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 11487208, guid: 733bbfc80254c6441ac82981a01c193f, type: 2}
+      propertyPath: stepSounds.Array.size
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 433104, guid: 733bbfc80254c6441ac82981a01c193f, type: 2}
       propertyPath: m_LocalPosition.x
       value: 10
@@ -1188,6 +1192,46 @@ Prefab:
       propertyPath: hitSounds.Array.data[1]
       value: 
       objectReference: {fileID: 8300000, guid: 9409ccf5e8bbe8549beb01bc44389ecd, type: 3}
+    - target: {fileID: 11487208, guid: 733bbfc80254c6441ac82981a01c193f, type: 2}
+      propertyPath: stepSound
+      value: 
+      objectReference: {fileID: 8300000, guid: bb77e11c80d44734295cc8faf44a9774, type: 3}
+    - target: {fileID: 11487208, guid: 733bbfc80254c6441ac82981a01c193f, type: 2}
+      propertyPath: stepRate
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 11487208, guid: 733bbfc80254c6441ac82981a01c193f, type: 2}
+      propertyPath: stepSounds.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: fc8929689322f1b4eacae65aff030442, type: 3}
+    - target: {fileID: 11487208, guid: 733bbfc80254c6441ac82981a01c193f, type: 2}
+      propertyPath: stepSounds.Array.data[1]
+      value: 
+      objectReference: {fileID: 8300000, guid: bb77e11c80d44734295cc8faf44a9774, type: 3}
+    - target: {fileID: 11487208, guid: 733bbfc80254c6441ac82981a01c193f, type: 2}
+      propertyPath: stepSounds.Array.data[2]
+      value: 
+      objectReference: {fileID: 8300000, guid: a167288dd1edc734eaf6cebd3d17bc9f, type: 3}
+    - target: {fileID: 11487208, guid: 733bbfc80254c6441ac82981a01c193f, type: 2}
+      propertyPath: stepSounds.Array.data[3]
+      value: 
+      objectReference: {fileID: 8300000, guid: 7accea742ccec6e478556b80f1507b30, type: 3}
+    - target: {fileID: 11487208, guid: 733bbfc80254c6441ac82981a01c193f, type: 2}
+      propertyPath: stepSounds.Array.data[4]
+      value: 
+      objectReference: {fileID: 8300000, guid: 71d757a5386610a458adc7daf7eb1130, type: 3}
+    - target: {fileID: 11487208, guid: 733bbfc80254c6441ac82981a01c193f, type: 2}
+      propertyPath: stepSounds.Array.data[5]
+      value: 
+      objectReference: {fileID: 8300000, guid: 050123a1c3c127446ab7d23f37cf9e5a, type: 3}
+    - target: {fileID: 11487208, guid: 733bbfc80254c6441ac82981a01c193f, type: 2}
+      propertyPath: stepSounds.Array.data[6]
+      value: 
+      objectReference: {fileID: 8300000, guid: f8366da86f816454085dc2768e3923b7, type: 3}
+    - target: {fileID: 11487208, guid: 733bbfc80254c6441ac82981a01c193f, type: 2}
+      propertyPath: stepSounds.Array.data[7]
+      value: 
+      objectReference: {fileID: 8300000, guid: 0ac420579308bd6408b58751a0e83512, type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 733bbfc80254c6441ac82981a01c193f, type: 2}
   m_IsPrefabParent: 0
