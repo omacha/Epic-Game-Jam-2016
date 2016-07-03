@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.SceneManagement;
 
 public class PuteScenario : Scenario{
 
@@ -9,6 +10,8 @@ public class PuteScenario : Scenario{
 	public int indexOfQuestObject;
 	public GameObject itemDatabase;
 	public GameObject BoxManager;
+
+	public int sceneToLoad;
 
 	public override void Play(){
 		Debug.Log ("Play puteScenario");
@@ -38,8 +41,18 @@ public class PuteScenario : Scenario{
 	public override void EndScenario(){
 		if (finishedScenario) {
 			Debug.Log ("Scenario Has ended");
+			StartCoroutine ("EndGame");
 		} else {
 			Debug.Log ("Scenario not ended");
 		}
+	}
+
+
+	IEnumerator EndGame(){
+		//SceneManager.LoadScene (SceneManager.GetActiveScene ().buildIndex);
+		float fadeTime = GameObject.Find("GameManager").GetComponent<Fading>().BeginFade(1);
+
+		yield return new WaitForSeconds(fadeTime);
+		SceneManager.LoadScene (sceneToLoad);
 	}
 }

@@ -35,6 +35,7 @@ public class TextBoxManager : MonoBehaviour {
 	}
 
 	void Update(){
+		endAtLine = textLines.Length - 1;
 		theText.text = textLines [currentLine];
 		if(Input.GetKeyDown(KeyCode.Return) && textBoox.activeSelf){
 			currentLine +=1;

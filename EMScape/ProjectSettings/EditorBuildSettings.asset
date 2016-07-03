@@ -15,3 +15,9 @@ EditorBuildSettings:
     path: Assets/Levels/ChambrePute.unity
   - enabled: 1
     path: Assets/Levels/Salle1.unity
+  - enabled: 1
+    path: Assets/Levels/FinalPute.unity
+  - enabled: 1
+    path: Assets/Levels/GAME OVER.unity
+  - enabled: 1
+    path: Assets/Levels/Credits.unity

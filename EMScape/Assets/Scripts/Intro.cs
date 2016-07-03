@@ -14,6 +14,9 @@ public class Intro : MonoBehaviour {
 	void Update () {
 		duration = duration - Time.deltaTime;
 
+		if (Input.GetKey (KeyCode.Return)) {
+			duration = 0;
+		}
 		if (duration <= 0) {
 			StartCoroutine ("EndGame");
 		}
