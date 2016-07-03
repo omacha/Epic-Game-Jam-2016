@@ -73,7 +73,7 @@ public class InventoryOutdated : MonoBehaviour {
 				slots [i] = inventory [i];
 
 				if (slots [i].itemName != null && slots[i].itemAquired) {
-					GUI.Label (new Rect (100 + 100 * x, 100 + 100 * y, 100, 100), slots[i].itemIcon);
+					GUI.Label (new Rect (100 + 100 * x, 100 + 100 * y, 100, 100), slots[i].itemIcon.texture);
 					if (cellRect.Contains (Event.current.mousePosition)){
 						GUI.Box (new Rect (Event.current.mousePosition.x+100, Event.current.mousePosition.y+100, 200, 100),showTooltip(slots[i]));
 						if (Event.current.button == 0 && Event.current.type == EventType.mouseDown) {

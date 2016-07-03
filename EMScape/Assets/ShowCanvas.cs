@@ -15,7 +15,6 @@ public class ShowCanvas : MonoBehaviour {
 		if (i > 0) {
 			i = i-1;
 		}
-		Debug.Log (i);
 		if (Input.GetKey (KeyCode.E) && i<=0) {
 			show = !show;
 			this.transform.GetComponent<Canvas>().enabled = show;

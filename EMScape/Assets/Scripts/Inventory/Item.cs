@@ -9,7 +9,7 @@ public class Item	 {
 	public int itemID;
 	public string itemDesc;
 	public int itemPower;
-	public Texture itemIcon;
+	public Sprite itemIcon;
 	public ItemType itemType;
 	public bool itemAquired;
 	public bool itemEquiped;

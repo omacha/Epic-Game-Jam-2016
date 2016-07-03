@@ -1451,6 +1451,7 @@ GameObject:
   - 114: {fileID: 1010520163}
   - 114: {fileID: 1010520162}
   - 114: {fileID: 1010520165}
+  - 61: {fileID: 1010520166}
   m_Layer: 5
   m_Name: W1
   m_TagString: Untagged
@@ -1574,6 +1575,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itDatabase: {fileID: 1525082763}
   itIndex: 0
+--- !u!61 &1010520166
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1010520160}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Size: {x: 70, y: 70}
 --- !u!1 &1057172006
 GameObject:
   m_ObjectHideFlags: 0
