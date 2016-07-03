@@ -6,6 +6,11 @@ public class Controller : MonoBehaviour {
 	public float velocityLeftRight = 10.0f;
 	public float borderPadding = 1.0f;
 
+	public AudioClip[] stepSounds = new AudioClip[0];
+	public float stepRate = 0.5f;
+	private float timeToStep = 0.0f;
+	private int curFootStep = 0;
+
 	public GameObject floor;
 	private Terrain terrain;
 
@@ -21,7 +26,7 @@ public class Controller : MonoBehaviour {
 		}
 		if (terrain == null) {
 			Debug.Log ("Floor has no \"Terrain\" Component.");
-		}else{
+		} else {
 			Vector3 terrainPosition = terrain.transform.position;
 			Vector3 terrainSize = terrain.terrainData.size;
 
@@ -36,19 +41,20 @@ public class Controller : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		float sideMvmt = Input.GetAxis ("Horizontal");
 		float upMvmt = Input.GetAxis ("Vertical");
+		float sideMvmt = Input.GetAxis ("Horizontal");
 
-		this.transform.Translate (new Vector3 (velocityLeftRight * sideMvmt * Time.deltaTime, 0.0f,  0.0f));
-		this.transform.Translate (new Vector3 (0.0f, 0.0f, velocityUpDown * upMvmt * Time.deltaTime));
+		float depthTranslation = velocityUpDown * upMvmt * Time.deltaTime;
+		float sideTranslation  = velocityLeftRight * sideMvmt * Time.deltaTime;
 
-		float mvmt = velocityLeftRight * sideMvmt * Time.deltaTime;
+		this.transform.Translate (new Vector3 (sideTranslation, 0.0f,  0.0f));
+		this.transform.Translate (new Vector3 (0.0f, 0.0f, depthTranslation));
 
-		if (mvmt < 0.0f) {
+		if (sideTranslation < 0.0f) {
 			Vector3 curScale = this.transform.localScale;
 			curScale.x = -Mathf.Abs (curScale.x);
 			this.transform.localScale = curScale;
-		} else if (mvmt > 0.0f) {
+		} else if (sideTranslation > 0.0f) {
 			Vector3 curScale = this.transform.localScale;
 			curScale.x = Mathf.Abs (curScale.x);
 			this.transform.localScale = curScale;
@@ -70,5 +76,12 @@ public class Controller : MonoBehaviour {
 		}
 
 		this.transform.position = playerPos;
+
+		if (stepSounds.Length > 0 && sideTranslation * sideTranslation + depthTranslation * depthTranslation > 0.0f) {
+			if (Time.time > timeToStep) {
+				timeToStep = Time.time + 1 / stepRate;
+				AudioSource.PlayClipAtPoint (stepSounds[curFootStep++ % stepSounds.Length], transform.position);
+			}
+		}
 	}
 }

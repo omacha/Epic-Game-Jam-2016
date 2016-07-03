@@ -1,5 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.IO;
+using UnityEngine.SceneManagement;
 
 public class Tutorial : MonoBehaviour {
 
@@ -8,9 +10,14 @@ public class Tutorial : MonoBehaviour {
 	public GameObject tuto;
 	// Use this for initialization
 	void Start () {
-		if (explain != null) {
-			explain.transform.gameObject.SetActive (true);
-			control.transform.gameObject.SetActive (false);
+		if (SceneManager.GetActiveScene().buildIndex == 2){
+			if (explain != null) {
+				explain.transform.gameObject.SetActive (true);
+				control.transform.gameObject.SetActive (false);
+			}
+			Debug.Log ("First time");
+		} else {
+			GameObject.Find ("ItemDatabase").GetComponent<Backup> ().Load ();
 		}
 	}
 	

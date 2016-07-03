@@ -6522,6 +6522,8 @@ MonoBehaviour:
   velocityUpDown: 5
   velocityLeftRight: 4
   borderPadding: 1
+  stepSounds: []
+  stepRate: 0.5
   floor: {fileID: 795469418}
 --- !u!114 &1969916553
 MonoBehaviour:
@@ -6783,7 +6785,7 @@ MonoBehaviour:
     itemPower: 12
     itemIcon: {fileID: 21300000, guid: f057579b7dcdb8e489145c08cff38b8d, type: 3}
     itemType: 0
-    itemAquired: 1
+    itemAquired: 0
     itemEquiped: 0
   - itemName: Syringe
     itemID: 1
@@ -6799,15 +6801,15 @@ MonoBehaviour:
     itemPower: 0
     itemIcon: {fileID: 2800000, guid: a6bb3fd59e7eca7409f4b6b095fb0934, type: 3}
     itemType: 3
-    itemAquired: 1
-    itemEquiped: 1
+    itemAquired: 0
+    itemEquiped: 0
   - itemName: Rolator
     itemID: 3
     itemDesc: 
     itemPower: 0
     itemIcon: {fileID: 2800000, guid: ff3ec2d874f7d404ab7a40640f8ed42b, type: 3}
     itemType: 3
-    itemAquired: 1
+    itemAquired: 0
     itemEquiped: 0
   - itemName: 
     itemID: 0
@@ -6815,8 +6817,8 @@ MonoBehaviour:
     itemPower: 0
     itemIcon: {fileID: 0}
     itemType: 0
-    itemAquired: 1
-    itemEquiped: 1
+    itemAquired: 0
+    itemEquiped: 0
   - itemName: 
     itemID: 0
     itemDesc: 
