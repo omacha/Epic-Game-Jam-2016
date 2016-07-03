@@ -6,6 +6,12 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Levels/OKUNiD.unity
+  - enabled: 1
+    path: Assets/Levels/Menu.unity
+  - enabled: 1
     path: Assets/Levels/CouloirBase.unity
+  - enabled: 1
+    path: Assets/Levels/ChambrePute.unity
   - enabled: 1
     path: Assets/Levels/Salle1.unity

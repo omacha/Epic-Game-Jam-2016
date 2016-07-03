@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.UI;
+using System.IO;
 
 public class Selector : MonoBehaviour {
 
@@ -26,7 +27,10 @@ public class Selector : MonoBehaviour {
 		int defaultA = defaultSelectedAccessories.GetComponent<InventoryLinker> ().itIndex;
 
 		for (int i = 0; i < database.itemList.Count; i++) {
-			database.itemList [i].itemEquiped = false;
+			if (!File.Exists ("equiped.txt")) {
+				Debug.Log ("equiped.txt does not exist => all object are unequiped");
+				database.itemList [i].itemEquiped = false;
+			}
 		}
 
 		//Set default selected objects 

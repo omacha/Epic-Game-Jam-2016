@@ -154,6 +154,6 @@ public class HoeFuckingGame : MonoBehaviour {
 		float fadeTime = GameObject.Find("GameManager").GetComponent<Fading>().BeginFade(1);
 
 		yield return new WaitForSeconds(fadeTime);
-		Application.LoadLevel (2);
+		SceneManager.LoadScene (3);
 	}
 }
