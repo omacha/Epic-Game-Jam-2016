@@ -6,7 +6,7 @@ public class Controller : MonoBehaviour {
 	public float velocityLeftRight = 10.0f;
 	public float borderPadding = 1.0f;
 
-	public AudioClip[] stepSounds;
+	public AudioClip[] stepSounds = new AudioClip[0];
 	public float stepRate = 0.5f;
 	private float timeToStep = 0.0f;
 	private int curFootStep = 0;

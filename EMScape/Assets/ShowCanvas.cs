@@ -7,7 +7,12 @@ public class ShowCanvas : MonoBehaviour {
 	bool show = false;
 	int i = 0;
 	void Start () {
-		this.transform.GetComponent<Canvas>().enabled = show;
+		this.transform.GetChild (0).gameObject.SetActive (false);
+		this.transform.GetChild (1).gameObject.SetActive (false);
+		this.transform.GetChild (2).gameObject.SetActive (false);
+		this.transform.GetChild (3).gameObject.SetActive (false);
+		this.transform.GetChild (4).gameObject.SetActive (false);
+
 	}
 	
 	// Update is called once per frame
@@ -17,7 +22,11 @@ public class ShowCanvas : MonoBehaviour {
 		}
 		if (Input.GetKey (KeyCode.E) && i<=0) {
 			show = !show;
-			this.transform.GetComponent<Canvas>().enabled = show;
+			this.transform.GetChild (0).gameObject.SetActive (show);
+			this.transform.GetChild (1).gameObject.SetActive (show);
+			this.transform.GetChild (2).gameObject.SetActive (show);
+			this.transform.GetChild (3).gameObject.SetActive (show);
+			this.transform.GetChild (4).gameObject.SetActive (show);
 			i = 10;
 		}
 	}
