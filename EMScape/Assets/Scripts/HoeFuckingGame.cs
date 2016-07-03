@@ -26,6 +26,7 @@ public class HoeFuckingGame : MonoBehaviour {
 	public float score = 0;
 
 	bool win = false;
+	public int sceneToLoad = 5;
 
 	// Use this for initialization
 	void Start () {
@@ -154,6 +155,6 @@ public class HoeFuckingGame : MonoBehaviour {
 		float fadeTime = GameObject.Find("GameManager").GetComponent<Fading>().BeginFade(1);
 
 		yield return new WaitForSeconds(fadeTime);
-		SceneManager.LoadScene (3);
+		SceneManager.LoadScene (sceneToLoad);
 	}
 }
