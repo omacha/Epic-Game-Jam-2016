@@ -5,6 +5,8 @@ public class RangedWeapon : MonoBehaviour {
 	public float damage = 3.0f;
 	public float fireRate = 1.0f;
 
+	public AudioClip[] hitSounds;
+
 	public GameObject prefab;
 	public GameObject firePoint;
 
@@ -24,17 +26,18 @@ public class RangedWeapon : MonoBehaviour {
 	}
 
 	public void Attack () {
-		if (gameObject.GetComponent<Rigidbody> ().velocity.x > 0.0f) {
-			Vector3 pos = gameObject.transform.position;
-			pos.x = Mathf.Abs (pos.x);
-			gameObject.transform.position = pos;
-		} else if (gameObject.GetComponent<Rigidbody> ().velocity.x < 0.0f) {
-			Vector3 pos = gameObject.transform.position;
-			pos.x = -Mathf.Abs (pos.x);
-			gameObject.transform.position = pos;
-		}
-
 		GameObject obj = (GameObject)Instantiate (prefab, firePoint.transform.position, firePoint.transform.rotation);
 		obj.GetComponent<ProjectileController> ().SetDamage (damage);
+
+		Vector3 curScale = obj.transform.localScale;
+		Vector3 playerScale = GameObject.FindGameObjectWithTag("Player").transform.localScale;
+		curScale.x = Mathf.Sign (playerScale.x) * Mathf.Abs (curScale.x);
+		obj.transform.localScale = curScale;
+
+		if (hitSounds.Length > 0) {
+			int index = (int)Mathf.Floor (Random.value * hitSounds.Length);
+			AudioClip hitSound = hitSounds [index];
+			obj.GetComponent<ProjectileController> ().SetHitSound (hitSound);
+		}
 	}
 }

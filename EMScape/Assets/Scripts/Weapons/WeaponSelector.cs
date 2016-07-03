@@ -11,6 +11,9 @@ public class WeaponSelector : MonoBehaviour {
 		if (db == null) {
 			Debug.LogError ("Object has no component ItemDatabase");
 		}
+
+		GetComponent<Weapon> ().enabled = false;
+		GetComponent<RangedWeapon> ().enabled = false;
 	}
 	
 	// Update is called once per frame

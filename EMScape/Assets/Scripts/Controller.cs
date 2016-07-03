@@ -36,11 +36,23 @@ public class Controller : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		float upMvmt = Input.GetAxis ("Horizontal");
-		float sideMvmt = Input.GetAxis ("Vertical");
+		float sideMvmt = Input.GetAxis ("Horizontal");
+		float upMvmt = Input.GetAxis ("Vertical");
 
-		this.transform.Translate (new Vector3 (velocityUpDown * upMvmt * Time.deltaTime, 0.0f,  0.0f));
-		this.transform.Translate (new Vector3 (0.0f, 0.0f, velocityLeftRight * sideMvmt * Time.deltaTime));
+		this.transform.Translate (new Vector3 (velocityLeftRight * sideMvmt * Time.deltaTime, 0.0f,  0.0f));
+		this.transform.Translate (new Vector3 (0.0f, 0.0f, velocityUpDown * upMvmt * Time.deltaTime));
+
+		float mvmt = velocityLeftRight * sideMvmt * Time.deltaTime;
+
+		if (mvmt < 0.0f) {
+			Vector3 curScale = this.transform.localScale;
+			curScale.x = -Mathf.Abs (curScale.x);
+			this.transform.localScale = curScale;
+		} else if (mvmt > 0.0f) {
+			Vector3 curScale = this.transform.localScale;
+			curScale.x = Mathf.Abs (curScale.x);
+			this.transform.localScale = curScale;
+		}
 
 		// check for border collisions
 		Vector3 playerPos = this.transform.position;

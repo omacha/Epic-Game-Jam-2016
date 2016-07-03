@@ -7,6 +7,8 @@ public class Weapon : MonoBehaviour {
 
 	public Collider attackTrigger;
 
+	public AudioClip[] hitSounds;
+
 	private float timeToFire = 0.0f;
 
 	// Use this for initialization
@@ -25,7 +27,12 @@ public class Weapon : MonoBehaviour {
 	}
 
 	public void Attack () {
-		attackTrigger.GetComponent<AttackTrigger>().setDamage (damage);
+		attackTrigger.GetComponent<AttackTrigger>().SetDamage (damage);
+		if (hitSounds.Length > 0) {
+			int index = (int)Mathf.Floor (Random.value * hitSounds.Length);
+			AudioClip hitSound = hitSounds [index];
+			attackTrigger.GetComponent<AttackTrigger> ().SetHitSound (hitSound);
+		}
 		attackTrigger.enabled = true;
 		// animator call animation
 	}

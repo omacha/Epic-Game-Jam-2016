@@ -8,6 +8,7 @@ public class ProjectileController : MonoBehaviour {
 	private float damage;
 	private GameObject player;
 	private float startTime;
+	private AudioClip hitSound;
 
 	// Use this for initialization
 	void Start () {
@@ -36,10 +37,19 @@ public class ProjectileController : MonoBehaviour {
 		this.damage = damage;
 	}
 
+	public void SetHitSound(AudioClip audio) {
+		this.hitSound = audio;
+	}
+
 	void OnCollisionEnter(Collision other) {
 		if (other.gameObject.CompareTag ("Enemy") && other.gameObject.GetComponent<Health> () != null) {
 			other.gameObject.GetComponent<Health> ().Damage (damage);
 			Debug.Log (other.gameObject.name + " has taken " + damage + " damage.");
+
+			if (hitSound != null) {
+				// play audio
+				AudioSource.PlayClipAtPoint(hitSound, Vector3.zero);
+			}
 			Destroy (gameObject);
 		}
 	}
