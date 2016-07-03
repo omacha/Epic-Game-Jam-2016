@@ -5,7 +5,6 @@ public class Weapon : MonoBehaviour {
 	public float damage = 3.0f;
 	public float fireRate = 1.0f;
 
-	public GameObject firePoint;
 	public Collider attackTrigger;
 
 	private float timeToFire = 0.0f;
