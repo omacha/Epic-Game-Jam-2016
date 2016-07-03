@@ -27,6 +27,6 @@ public class RangedWeapon : MonoBehaviour {
 
 	public void Attack () {
 		/* attack is being done in animation behavior script */
-		GameObject.FindObjectOfType<Animator> ().SetBool ("AttackThrow", true);
+		GameObject.FindGameObjectWithTag ("Player").GetComponent<Animator> ().SetBool ("AttackThrow", true);
 	}
 }
