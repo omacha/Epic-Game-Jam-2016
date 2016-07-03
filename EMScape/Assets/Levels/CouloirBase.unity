@@ -6440,6 +6440,8 @@ GameObject:
   - 114: {fileID: 1969916553}
   - 136: {fileID: 1969916554}
   - 54: {fileID: 1969916549}
+  - 114: {fileID: 1969916556}
+  - 95: {fileID: 1969916555}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -6551,6 +6553,34 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 2
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!95 &1969916555
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1969916547}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: e7a8907de87a30148ab1ef353b724cf5, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &1969916556
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1969916547}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 27762f52a883b9e439ae1a0dca724946, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1978842324
 GameObject:
   m_ObjectHideFlags: 0
@@ -6791,15 +6821,15 @@ MonoBehaviour:
     itemID: 1
     itemDesc: sgsgs
     itemPower: 0
-    itemIcon: {fileID: 21300000, guid: f057579b7dcdb8e489145c08cff38b8d, type: 3}
-    itemType: 1
-    itemAquired: 1
+    itemIcon: {fileID: 21300000, guid: 45a433ce12b51f34c8f160baaca875e5, type: 3}
+    itemType: 0
+    itemAquired: 0
     itemEquiped: 0
   - itemName: Crutches
     itemID: 2
     itemDesc: 
     itemPower: 0
-    itemIcon: {fileID: 2800000, guid: a6bb3fd59e7eca7409f4b6b095fb0934, type: 3}
+    itemIcon: {fileID: 21300000, guid: a6bb3fd59e7eca7409f4b6b095fb0934, type: 3}
     itemType: 3
     itemAquired: 0
     itemEquiped: 0
@@ -6807,7 +6837,7 @@ MonoBehaviour:
     itemID: 3
     itemDesc: 
     itemPower: 0
-    itemIcon: {fileID: 2800000, guid: ff3ec2d874f7d404ab7a40640f8ed42b, type: 3}
+    itemIcon: {fileID: 21300000, guid: ff3ec2d874f7d404ab7a40640f8ed42b, type: 3}
     itemType: 3
     itemAquired: 0
     itemEquiped: 0
