@@ -839,11 +839,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 904531275}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-<<<<<<< HEAD
   m_LocalPosition: {x: 40, y: 3, z: 60}
-=======
-  m_LocalPosition: {x: 50, y: 3, z: 60}
->>>>>>> 433e35d0d7a6cdbe981d7c56323a0f5a62f2a2b6
   m_LocalScale: {x: 4, y: 6, z: 0.5}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
@@ -1657,13 +1653,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 22efa8322da39c741b372fc2403403fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-<<<<<<< HEAD
-  velocityUpDown: 5
-  velocityLeftRight: 4
-=======
   velocityUpDown: 10
   velocityLeftRight: 10
->>>>>>> 433e35d0d7a6cdbe981d7c56323a0f5a62f2a2b6
   borderPadding: 1
   floor: {fileID: 795469418}
 --- !u!114 &1969916553
@@ -1677,10 +1668,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4eab82f60d61e0f46aba2bbbbdbfc270, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-<<<<<<< HEAD
-=======
   floor: {fileID: 795469418}
->>>>>>> 433e35d0d7a6cdbe981d7c56323a0f5a62f2a2b6
   movementBuffer: 10
   borderBuffer: 2
 --- !u!136 &1969916554
