@@ -26,18 +26,7 @@ public class RangedWeapon : MonoBehaviour {
 	}
 
 	public void Attack () {
-		GameObject obj = (GameObject)Instantiate (prefab, firePoint.transform.position, firePoint.transform.rotation);
-		obj.GetComponent<ProjectileController> ().SetDamage (damage);
-
-		if (hitSounds.Length > 0) {
-			int index = (int)Mathf.Floor (Random.value * hitSounds.Length);
-			AudioClip hitSound = hitSounds [index];
-			obj.GetComponent<ProjectileController> ().SetHitSound (hitSound);
-		}
-
-		Vector3 curScale = obj.transform.localScale;
-		Vector3 playerScale = GameObject.FindGameObjectWithTag("Player").transform.localScale;
-		curScale.x = Mathf.Sign (playerScale.x) * Mathf.Abs (curScale.x);
-		obj.transform.localScale = curScale;
+		/* attack is being done in animation behavior script */
+		GameObject.FindObjectOfType<Animator> ().SetBool ("AttackThrow", true);
 	}
 }

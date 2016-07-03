@@ -1373,15 +1373,15 @@ MonoBehaviour:
   itemList:
   - itemName: Frying pan
     itemID: 0
-    itemDesc: blablabla
+    itemDesc: Pssshhhh... PTANG !
     itemPower: 12
     itemIcon: {fileID: 21300000, guid: f057579b7dcdb8e489145c08cff38b8d, type: 3}
     itemType: 0
     itemAquired: 1
-    itemEquiped: 0
+    itemEquiped: 1
   - itemName: Syringe
     itemID: 1
-    itemDesc: sgsgs
+    itemDesc: For your special needs.
     itemPower: 0
     itemIcon: {fileID: 21300000, guid: f057579b7dcdb8e489145c08cff38b8d, type: 3}
     itemType: 0
@@ -1389,7 +1389,7 @@ MonoBehaviour:
     itemEquiped: 0
   - itemName: Crutches
     itemID: 2
-    itemDesc: 
+    itemDesc: Been drinking a lot?
     itemPower: 0
     itemIcon: {fileID: 2800000, guid: a6bb3fd59e7eca7409f4b6b095fb0934, type: 3}
     itemType: 0

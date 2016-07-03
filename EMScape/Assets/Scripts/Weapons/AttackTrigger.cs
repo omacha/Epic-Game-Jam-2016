@@ -12,6 +12,7 @@ public class AttackTrigger : MonoBehaviour {
 			if (hitSound != null) {
 				AudioSource.PlayClipAtPoint (hitSound, transform.position);
 			}
+			GameObject.FindObjectOfType<Animator> ().SetBool ("AttackFryingPan", true);
 			GetComponent<BoxCollider> ().enabled = false;
 			Debug.Log (col.gameObject.name + " has received " + dmg + " damage!");
 		}
